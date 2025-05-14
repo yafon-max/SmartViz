@@ -443,7 +443,7 @@ export default {
           step4: {
             title: '4. Determine Parking State',
             content: 'When α > threshold T and the duration > time threshold τ, determine as a parking state. This ensures that the vehicle is indeed in the parking area and has stayed for a sufficient length of time. The double threshold mechanism effectively filters temporary stops and passing vehicles, improving the accuracy of determination. Through experimental verification, the optimal threshold T is set to 0.75, and the time threshold τ is 15 seconds, achieving good results in practical applications.',
-            formula: 'Parking State = { True, if α > T and t > τ False, otherwise'
+            formula: 'Parking State =  True, if α > T and t > τ False, otherwise'
           }
         },
         imageAlt: 'Parking determination algorithm diagram',
