@@ -341,8 +341,8 @@
         <div class="modal-body siteplan-modal-body">
           <img 
             :src="siteplanType === 'normal' 
-              ? '../src/assets/site_plans/gaojing_siteplan.png' 
-              : '../src/assets/site_plans/gaojing_Satellite_plan.png'" 
+              ? '../assets/site_plans/gaojing_siteplan.png' 
+              : '../assets/site_plans/gaojing_Satellite_plan.png'" 
             :alt="siteplanType === 'normal' ? t('model3d.panels.siteplan.normal', '基地总体平面图') : t('model3d.panels.siteplan.satellite', '基地卫星图')"
             class="fullscreen-image" 
           />

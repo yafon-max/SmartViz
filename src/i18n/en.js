@@ -443,7 +443,7 @@ export default {
           step4: {
             title: '4. Determine Parking State',
             content: 'When α > threshold T and the duration > time threshold τ, determine as a parking state. This ensures that the vehicle is indeed in the parking area and has stayed for a sufficient length of time. The double threshold mechanism effectively filters temporary stops and passing vehicles, improving the accuracy of determination. Through experimental verification, the optimal threshold T is set to 0.75, and the time threshold τ is 15 seconds, achieving good results in practical applications.',
-            formula: 'Parking State = { True, if α > T and t > τ\\False, otherwise'
+            formula: 'Parking State = { True, if α > T and t > τ False, otherwise'
           }
         },
         imageAlt: 'Parking determination algorithm diagram',
@@ -466,7 +466,7 @@ export default {
           step3: {
             title: '3. Behavior Analysis and Determination',
             content: 'The system not only detects pedestrian position (foot position) but also analyzes their behavior patterns. By calculating the overlap between pedestrians and green areas β = Area(P ∩ GreenMask) / Area(P) and their stay time t, combined with behavioral features (such as sitting, lying, picking, etc.), a comprehensive judgment is made on whether it constitutes illegal intrusion.',
-            formula: 'Intrusion Level = f(β, t, behavior type, number of people)\\where β is the area overlap, t is the stay time'
+            formula: 'Intrusion Level = f(β, t, behavior type, number of people) where β is the area overlap, t is the stay time'
           },
           step4: {
             title: '4. Response and Recording Mechanism',

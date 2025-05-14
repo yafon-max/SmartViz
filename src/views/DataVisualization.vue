@@ -263,7 +263,7 @@
             <div class="masterplan-images">
               <div class="masterplan-item">
                 <h4>{{ t('dataViz.spaceDiagnosis.analysisMap') }}</h4>
-                <img :src="`/assets/site_plans/gaojing_siteplan.png`" :alt="t('dataViz.spaceDiagnosis.analysisMapAlt')">
+                <img :src="`../assets/site_plans/gaojing_siteplan.png`" :alt="t('dataViz.spaceDiagnosis.analysisMapAlt')">
                 <div class="document-content">
                   <p class="document-paragraph">{{ t('dataViz.spaceDiagnosis.analysisDescription') }}</p>
                 </div>
@@ -271,7 +271,7 @@
               
               <div class="masterplan-item">
                 <h4>{{ t('dataViz.spaceDiagnosis.designMap') }}</h4>
-                <img :src="`/assets/spacial_design/site_plan_design.png`" :alt="t('dataViz.spaceDiagnosis.designMapAlt')">
+                <img :src="`../assets/spacial_design/site_plan_design.png`" :alt="t('dataViz.spaceDiagnosis.designMapAlt')">
                 <div class="document-content">
                   <p class="document-paragraph">{{ t('dataViz.spaceDiagnosis.designDescriptionPart1') }}</p>
                   <p class="document-paragraph">{{ t('dataViz.spaceDiagnosis.designDescriptionPart2') }}</p>
