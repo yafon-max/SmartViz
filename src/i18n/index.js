@@ -1,11 +1,19 @@
 import { createI18n } from 'vue-i18n'
-import en from './en.js'
-import zh from './zh.js'
 
-const messages = {
-  en,
-  zh
-}
+// 使用import.meta.glob自动导入所有语言文件
+const modules = import.meta.glob('./**.js', { eager: true })
+
+// 处理导入的语言文件
+const messages = {}
+Object.keys(modules).forEach(key => {
+  if (key !== './index.js') {
+    const matched = key.match(/\.\/(.+)\.js$/)
+    if (matched && matched.length > 1) {
+      const locale = matched[1]
+      messages[locale] = modules[key].default
+    }
+  }
+})
 
 // 从浏览器语言或本地存储中获取当前语言设置
 const getDefaultLocale = () => {
