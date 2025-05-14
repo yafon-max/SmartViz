@@ -293,7 +293,7 @@ export default {
         'mesh_25': 'Building 04',
         'mesh_26': 'Building 01',
         'mesh_27': 'Building 13',
-      'mesh_28': 'Building 17'
+        'mesh_28': 'Building 17'
+      }
     }
-  }
 }
