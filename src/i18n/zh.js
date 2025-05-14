@@ -9,7 +9,7 @@ export default {
     },
     footer: '© 2024 智维社区项目',
     footerAuthor: '作者：上海市城市更新及其空间优化技术重点实验室/建筑规划景观国家级虚拟仿真实验教学中心（同济大学）',
-    footerContact: '联系方式：yafonweb3@gmail.com',
+    footerContact: '联系方式：yafonweb3(at)gmail.com',
     language: '语言'
   },
   home: {
