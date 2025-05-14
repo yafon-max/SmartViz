@@ -2,7 +2,7 @@
 import { ref, provide, computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { setLocale, loadLanguageAsync } from './i18n';
+import { setLocale } from './i18n';
 
 // 获取i18n实例
 const { t, locale } = useI18n();
@@ -34,94 +34,72 @@ const toggleLanguage = () => {
   const newLocale = locale.value === 'zh' ? 'en' : 'zh';
   setLocale(newLocale);
 };
-
-const isLoading = ref(true)
-
-onMounted(async () => {
-  try {
-    await loadLanguageAsync()
-  } catch (error) {
-    console.error('语言包加载错误:', error)
-  } finally {
-    isLoading.value = false
-  }
-})
 </script>
 
 <template>
-  <div id="app">
-    <div v-if="isLoading" class="loading-overlay">
-      <div class="loading-container">
-        <div class="loading-spinner"></div>
-        <div class="loading-text">加载语言资源...</div>
+  <div class="app">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="/logo.svg" alt="logo" class="logo-image" /> 
+        <span class="logo-text">{{ t('app.title') }}</span>
       </div>
-    </div>
-    <template v-else>
-      <div class="app">
-        <!-- 导航栏 -->
-        <nav class="navbar">
-          <div class="logo">
-            <img src="/logo.svg" alt="logo" class="logo-image" /> 
-            <span class="logo-text">{{ t('app.title') }}</span>
-          </div>
-          <!-- 导航链接，使用router-link实现单页应用内部导航 --> 
-          <div class="nav-links">
-            
-            <router-link to="/" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-              {{ t('app.nav.home') }}</router-link>
-            <router-link to="/algorithm" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-              {{ t('app.nav.algorithm') }}</router-link>
-            <router-link to="/model" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
-                <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
-                <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-              {{ t('app.nav.model') }}</router-link>
-            <router-link to="/data" class="nav-link">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="3" y1="9" x2="21" y2="9"></line>
-                <line x1="9" y1="21" x2="9" y2="9"></line>
-              </svg>
-              {{ t('app.nav.data') }}</router-link>
-            
-            <!-- 语言切换按钮 -->
-            <button @click="toggleLanguage" class="language-toggle">
-              {{ locale === 'zh' ? 'English' : '中文' }}
-            </button>
-          </div>
-        </nav>
-
-        <!-- 主要内容区域，router-view用于显示当前路由对应的组件 -->
-        <main class="main-content router-view-container">
-          <router-view />
-        </main>
-
-        <!-- 页脚 -->
-        <footer class="footer">
-          <div class="footer-content">
-            <div class="footer-section">
-              <p class="footer-copyright">{{ t('app.footer') }}</p>
-              <div class="footer-divider"></div>
-              <p class="footer-info">{{ t('app.footerAuthor') }}</p>
-              <div class="footer-divider"></div>
-              <p class="footer-info">{{ t('app.footerContact') }}</p>
-            </div>
-          </div>
-        </footer>
+      <!-- 导航链接，使用router-link实现单页应用内部导航 --> 
+      <div class="nav-links">
+        
+        <router-link to="/" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          {{ t('app.nav.home') }}</router-link>
+        <router-link to="/algorithm" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          {{ t('app.nav.algorithm') }}</router-link>
+        <router-link to="/model" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+          {{ t('app.nav.model') }}</router-link>
+        <router-link to="/data" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="3" y1="9" x2="21" y2="9"></line>
+            <line x1="9" y1="21" x2="9" y2="9"></line>
+          </svg>
+          {{ t('app.nav.data') }}</router-link>
+        
+        <!-- 语言切换按钮 -->
+        <button @click="toggleLanguage" class="language-toggle">
+          {{ locale === 'zh' ? 'English' : '中文' }}
+        </button>
       </div>
-    </template>
+    </nav>
+
+    <!-- 主要内容区域，router-view用于显示当前路由对应的组件 -->
+    <main class="main-content router-view-container">
+      <router-view />
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <p class="footer-copyright">{{ t('app.footer') }}</p>
+          <div class="footer-divider"></div>
+          <p class="footer-info">{{ t('app.footerAuthor') }}</p>
+          <div class="footer-divider"></div>
+          <p class="footer-info">{{ t('app.footerContact') }}</p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -379,42 +357,5 @@ body {
     height: 1px;
     margin: 0.3rem 0;
   }
-}
-
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.loading-container {
-  text-align: center;
-}
-
-.loading-spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #42b983;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 20px;
-}
-
-.loading-text {
-  font-size: 16px;
-  color: #333;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 </style>
