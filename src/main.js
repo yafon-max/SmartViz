@@ -1,10 +1,21 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import i18n from './i18n'
+import i18n, { loadLanguageAsync } from './i18n'
 import './style.css'
 
-createApp(App)
-  .use(router)
-  .use(i18n)
-  .mount('#app')
+// 创建应用
+const app = createApp(App)
+
+// 注册插件
+app.use(router)
+app.use(i18n)
+
+// 添加加载指示器
+app.config.globalProperties.$loading = true
+
+// 先加载语言包，再挂载应用
+loadLanguageAsync().then(() => {
+  app.config.globalProperties.$loading = false
+  app.mount('#app')
+})
