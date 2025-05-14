@@ -171,8 +171,8 @@
             <div class="siteplan-image-container">
               <img 
                 :src="siteplanType === 'normal' 
-                  ? '../src/assets/site_plans/gaojing_siteplan.png' 
-                  : '../src/assets/site_plans/gaojing_Satellite_plan.png'" 
+                  ? '../assets/site_plans/gaojing_siteplan.png' 
+                  : '../assets/site_plans/gaojing_Satellite_plan.png'" 
                 :alt="siteplanType === 'normal' ? t('model3d.panels.siteplan.normal', '基地总体平面图') : t('model3d.panels.siteplan.satellite', '基地卫星图')" 
                 class="siteplan-image" 
               />
@@ -2091,7 +2091,7 @@ function getCameraImageUrl(cameraId) {
   console.log('cameraNum', cameraNum);
   
   // 使用编号构建图像URL路径
-  const imageUrl = `../src/assets/Camera_images/mesh_${cameraNum}.jpeg`;
+  const imageUrl = `../assets/Camera_images/mesh_${cameraNum}.jpeg`;
   console.log('imageUrl', imageUrl);
   
   // 如果没有有效ID，返回默认占位图
@@ -2114,7 +2114,7 @@ function getCameraImageUrl(cameraId) {
   console.log('cameraNum', cameraNum);
   
   // 使用编号构建图像URL路径
-  const imageUrl = `../src/assets/Camera_masks/${cameraNum}.jpg`;
+  const imageUrl = `../assets/Camera_masks/${cameraNum}.jpg`;
   console.log('imageUrl', imageUrl);
   
   // 如果没有有效ID，返回默认占位图
@@ -2137,7 +2137,7 @@ function getCameraImageUrl(cameraId) {
   console.log('cameraNum', cameraNum);
   
   // 使用编号构建图像URL路径
-  const imageUrl = `../src/assets/Camera_masks/mask_${cameraNum}.jpeg`;
+  const imageUrl = `../assets/Camera_masks/mask_${cameraNum}.jpeg`;
   console.log('imageUrl', imageUrl);
   
   // 如果没有有效ID，返回默认占位图
@@ -2160,7 +2160,7 @@ function getCameraImageUrl(cameraId) {
   console.log('cameraNum', cameraNum);
   
   // 使用编号构建图像URL路径
-  const imageUrl = `../src/assets/Camera_yolov5/mesh_${cameraNum}.jpg`;
+  const imageUrl = `../assets/Camera_yolov5/mesh_${cameraNum}.jpg`;
   console.log('imageUrl', imageUrl);
   
   // 如果没有有效ID，返回默认占位图

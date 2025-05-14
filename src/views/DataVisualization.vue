@@ -263,7 +263,7 @@
             <div class="masterplan-images">
               <div class="masterplan-item">
                 <h4>{{ t('dataViz.spaceDiagnosis.analysisMap') }}</h4>
-                <img :src="`src/assets/site_plans/gaojing_siteplan.png`" :alt="t('dataViz.spaceDiagnosis.analysisMapAlt')">
+                <img :src="`/assets/site_plans/gaojing_siteplan.png`" :alt="t('dataViz.spaceDiagnosis.analysisMapAlt')">
                 <div class="document-content">
                   <p class="document-paragraph">{{ t('dataViz.spaceDiagnosis.analysisDescription') }}</p>
                 </div>
@@ -271,7 +271,7 @@
               
               <div class="masterplan-item">
                 <h4>{{ t('dataViz.spaceDiagnosis.designMap') }}</h4>
-                <img :src="`src/assets/spacial_design/site_plan_design.png`" :alt="t('dataViz.spaceDiagnosis.designMapAlt')">
+                <img :src="`/assets/spacial_design/site_plan_design.png`" :alt="t('dataViz.spaceDiagnosis.designMapAlt')">
                 <div class="document-content">
                   <p class="document-paragraph">{{ t('dataViz.spaceDiagnosis.designDescriptionPart1') }}</p>
                   <p class="document-paragraph">{{ t('dataViz.spaceDiagnosis.designDescriptionPart2') }}</p>
@@ -324,20 +324,20 @@ const scenarios = computed(() => [
     cameras: ['Camera-03', 'Camera-07', 'Camera-34'],
     images: {
       pedestrian: [
-        { url: '../src/assets/LowP-HighV/07_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') }
+        { url: '../assets/LowP-HighV/07_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') }
       ],
       parking: [
-        { url: '../src/assets/LowP-HighV/07_car.jpeg', caption: t('dataViz.scenarios.imageCaption.parkingDetection') },
+        { url: '../assets/LowP-HighV/07_car.jpeg', caption: t('dataViz.scenarios.imageCaption.parkingDetection') },
       ],
-      dailyData: { url: '../src/assets/LowP-HighV/07_data.png', caption: t('dataViz.scenarios.imageCaption.dailyData') }
+      dailyData: { url: '../assets/LowP-HighV/07_data.png', caption: t('dataViz.scenarios.imageCaption.dailyData') }
     },
     strategy: {
       title: t('dataViz.scenarios.highVehicleLowPedestrian.strategy.title'),
       description: t('dataViz.scenarios.highVehicleLowPedestrian.strategy.description'),
       cameras: ['Camera-03', 'Camera-07', 'Camera-34'],
       images: [
-        { url: '../src/assets/LowP-HighV/07_design1.jpeg', caption: t('dataViz.scenarios.highVehicleLowPedestrian.strategy.image1') },
-        { url: '../src/assets/LowP-HighV/07_design2.jpeg', caption: t('dataViz.scenarios.highVehicleLowPedestrian.strategy.image2') }
+        { url: '../assets/LowP-HighV/07_design1.jpeg', caption: t('dataViz.scenarios.highVehicleLowPedestrian.strategy.image1') },
+        { url: '../assets/LowP-HighV/07_design2.jpeg', caption: t('dataViz.scenarios.highVehicleLowPedestrian.strategy.image2') }
       ]
     }
   },
@@ -348,20 +348,20 @@ const scenarios = computed(() => [
     cameras: ['Camera-26', 'Camera-29'],
     images: {
       pedestrian: [
-        { url: '../src/assets/LowP-LowV/29_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') },
+        { url: '../assets/LowP-LowV/29_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') },
       ],
       parking: [
-        { url: '../src/assets/LowP-LowV/29_car.jpeg', caption: t('dataViz.scenarios.imageCaption.noParkingDetection') },
+        { url: '../assets/LowP-LowV/29_car.jpeg', caption: t('dataViz.scenarios.imageCaption.noParkingDetection') },
       ],
-      dailyData: { url: '../src/assets/LowP-LowV/29_data.png', caption: t('dataViz.scenarios.imageCaption.dailyData') }
+      dailyData: { url: '../assets/LowP-LowV/29_data.png', caption: t('dataViz.scenarios.imageCaption.dailyData') }
     },
     strategy: {
       title: t('dataViz.scenarios.lowVehicleLowPedestrian.strategy.title'),
       description: t('dataViz.scenarios.lowVehicleLowPedestrian.strategy.description'),
       cameras: ['Camera-26', 'Camera-29'],
       images: [
-        { url: '../src/assets/LowP-LowV/29_design1.jpeg', caption: t('dataViz.scenarios.lowVehicleLowPedestrian.strategy.image1') },
-        { url: '../src/assets/LowP-LowV/29_design2.jpeg', caption: t('dataViz.scenarios.lowVehicleLowPedestrian.strategy.image2') }
+        { url: '../assets/LowP-LowV/29_design1.jpeg', caption: t('dataViz.scenarios.lowVehicleLowPedestrian.strategy.image1') },
+        { url: '../assets/LowP-LowV/29_design2.jpeg', caption: t('dataViz.scenarios.lowVehicleLowPedestrian.strategy.image2') }
       ]
     }
   },
@@ -372,23 +372,23 @@ const scenarios = computed(() => [
     cameras: ['Camera-08', 'Camera-14', 'Camera-22'],
     images: {
       pedestrian: [
-        { url: '../src/assets/HighP-LowV/08_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') },
+        { url: '../assets/HighP-LowV/08_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') },
       ],
       parking: [
-        { url: '../src/assets/HighP-LowV/08_car.jpg', caption: t('dataViz.scenarios.imageCaption.noParkingDetection') },
+        { url: '../assets/HighP-LowV/08_car.jpg', caption: t('dataViz.scenarios.imageCaption.noParkingDetection') },
       ],
-      dailyData: { url: '../src/assets/HighP-LowV/08_data.png', caption: t('dataViz.scenarios.imageCaption.dailyData') }
+      dailyData: { url: '../assets/HighP-LowV/08_data.png', caption: t('dataViz.scenarios.imageCaption.dailyData') }
     },
     strategy: {
       title: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.title'),
       description: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.description'),
       cameras: ['Camera-08', 'Camera-14', 'Camera-22'],
       images: [
-        { url: '../src/assets/HighP-LowV/08_design1.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image1') },
-        { url: '../src/assets/HighP-LowV/08_design2.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image2') },
-        { url: '../src/assets/HighP-LowV/08_design3.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image3') },  
-        { url: '../src/assets/HighP-LowV/08_design_c22_1.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image4') },
-        { url: '../src/assets/HighP-LowV/08_design_c22_2.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image5') }
+        { url: '../assets/HighP-LowV/08_design1.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image1') },
+        { url: '../assets/HighP-LowV/08_design2.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image2') },
+        { url: '../assets/HighP-LowV/08_design3.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image3') },  
+        { url: '../assets/HighP-LowV/08_design_c22_1.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image4') },
+        { url: '../assets/HighP-LowV/08_design_c22_2.jpeg', caption: t('dataViz.scenarios.highPedestrianLowVehicle.strategy.image5') }
       ]
     }
   },
@@ -399,20 +399,20 @@ const scenarios = computed(() => [
     cameras: ['Camera-33', 'Camera-35'],
     images: {
       pedestrian: [
-        { url: '../src/assets/PV-Balanced/33_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') }
+        { url: '../assets/PV-Balanced/33_people.jpg', caption: t('dataViz.scenarios.imageCaption.pedestrianDetection') }
       ],
       parking: [
-        { url: '../src/assets/PV-Balanced/33_car.jpeg', caption: t('dataViz.scenarios.imageCaption.parkingDetection') },
+        { url: '../assets/PV-Balanced/33_car.jpeg', caption: t('dataViz.scenarios.imageCaption.parkingDetection') },
       ],
-      dailyData: { url: '../src/assets/PV-Balanced/33_data.png', caption: t('dataViz.scenarios.imageCaption.peakTimeData') }
+      dailyData: { url: '../assets/PV-Balanced/33_data.png', caption: t('dataViz.scenarios.imageCaption.peakTimeData') }
     },
     strategy: {
       title: t('dataViz.scenarios.alternatePeaks.strategy.title'),
       description: t('dataViz.scenarios.alternatePeaks.strategy.description'),
       cameras: ['Camera-33', 'Camera-35'],
       images: [
-        { url: '../src/assets/PV-Balanced/33_design1.jpeg', caption: t('dataViz.scenarios.alternatePeaks.strategy.image1') },
-        { url: '../src/assets/PV-Balanced/33_design2.jpeg', caption: t('dataViz.scenarios.alternatePeaks.strategy.image2') }
+        { url: '../assets/PV-Balanced/33_design1.jpeg', caption: t('dataViz.scenarios.alternatePeaks.strategy.image1') },
+        { url: '../assets/PV-Balanced/33_design2.jpeg', caption: t('dataViz.scenarios.alternatePeaks.strategy.image2') }
       ]
     }
   }

@@ -829,7 +829,7 @@ const toggleLayerDetail = (key) => {
 
 // 获取图片路径的方法
 const getImagePath = (relativePath) => {
-  return `../src/assets/${relativePath}`;
+  return `../assets/${relativePath}`;
 };
 
 // 获取本地化图片路径的方法（为特定需要中英文不同版本的图片）
@@ -838,7 +838,7 @@ const getLocalizedImagePath = (basePath) => {
   // YOLOv5检测效果图和数字孪生模型图使用相同路径
   // 其他图片根据语言选择不同版本
   const lang = locale.value === 'zh' ? '_zh' : '_en';
-  return `/Users/huangyanfeng/Desktop/test1/smart-community-viz/src/assets/${basePath}${lang}.png`;
+  return `../assets/${basePath}${lang}.png`;
 };
 
 // 流程图定义 - 视频数据流程图
