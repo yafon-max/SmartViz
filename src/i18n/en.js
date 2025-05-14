@@ -9,7 +9,7 @@ export default {
     },
     footer: '© 2024 SmartViz Community Project',
     footerAuthor: 'Authors: Shanghai Key Laboratory of Urban Renewal and Spatial Optimization/National Virtual Simulation Experiment Teaching Center for Architecture, Planning, and Landscape (Tongji University)',
-    footerContact: 'Contact: yafonweb3@gmail.com',
+    footerContact: 'Contact: yafonweb3 (at) gmail.com',
     language: 'Language'
   },
   home: {
@@ -22,6 +22,7 @@ export default {
     singleCameraMultiFrames: 'Single Camera Multi Frames',
     multiCameraSingleFrame: 'Multi Cameras Single Frame',
     multiCameraMultiFrames: 'Multi Cameras Multi Frames',
+    noticeText: 'This project was initiated in 2020, achieved initial success one year later, and was subsequently paused in 2021 due to the  covid-19 pandemic. The research is currently in the preliminary stage of theoretical and practical integration, and the entire algorithm application has suspended services for related communities.',
     introText: 'Spatio-temporal Analysis System for Urban Renewal Pedestrian and Vehicle Behavior Based on Computer Vision and Digital Twins',
     backgroundText: 'This project focuses on intelligent urban renewal applications based on multi-source data, with a practical case study centered on community video data. The project involves the intelligent analysis of street video data collected from community cameras using the YOLOv5 algorithm, enabling real-time monitoring and behavioral understanding of pedestrian and vehicle flow in urban communities. By constructing a digital twin platform, it provides decision-making support and design improvement suggestions for community managers and designers, thereby enhancing the level of community facility space renovation and safety management.',
     goalText: 'By collecting and analyzing data from multiple perspectives and time points, a spatiotemporal model of community pedestrian and vehicle behavior is constructed to explore activity patterns, providing data support and technical solutions for smart community development and refined urban management.',
@@ -465,7 +466,7 @@ export default {
           step3: {
             title: '3. Behavior Analysis and Determination',
             content: 'The system not only detects pedestrian position (foot position) but also analyzes their behavior patterns. By calculating the overlap between pedestrians and green areas β = Area(P ∩ GreenMask) / Area(P) and their stay time t, combined with behavioral features (such as sitting, lying, picking, etc.), a comprehensive judgment is made on whether it constitutes illegal intrusion.',
-            formula: 'Intrusion Level = f(β, t, behavior type, number of people)\nwhere β is the area overlap, t is the stay time'
+            formula: 'Intrusion Level = f(β, t, behavior type, number of people)\\where β is the area overlap, t is the stay time'
           },
           step4: {
             title: '4. Response and Recording Mechanism',
