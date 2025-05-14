@@ -1,30 +1,34 @@
 import { createI18n } from 'vue-i18n'
+import en from './en.js'
+import zh from './zh.js'
 
-// 使用import.meta.glob自动导入所有语言文件
-const modules = import.meta.glob('./**.js', { eager: true })
-
-// 处理导入的语言文件
-const messages = {}
-Object.keys(modules).forEach(key => {
-  if (key !== './index.js') {
-    const matched = key.match(/\.\/(.+)\.js$/)
-    if (matched && matched.length > 1) {
-      const locale = matched[1]
-      messages[locale] = modules[key].default
-    }
-  }
-})
+const messages = {
+  en,
+  zh
+}
 
 // 从浏览器语言或本地存储中获取当前语言设置
 const getDefaultLocale = () => {
-  const savedLocale = localStorage.getItem('smartCommunityLanguage')
-  if (savedLocale) {
-    return savedLocale
+  // 检查是否在浏览器环境中，以及 localStorage 是否可用
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const savedLocale = localStorage.getItem('smartCommunityLanguage');
+    if (savedLocale) {
+      return savedLocale;
+    }
   }
   
-  // 从浏览器语言设置中获取首选语言
-  const browserLang = navigator.language || navigator.userLanguage
-  return browserLang.startsWith('zh') ? 'zh' : 'en'
+  // 检查是否在浏览器环境中，以及 navigator.language 是否可用
+  if (typeof navigator !== 'undefined' && navigator.language) {
+    // userLanguage 是为旧版IE准备的
+    const browserLang = navigator.language || navigator.userLanguage;
+    // 将浏览器语言代码统一转为小写进行比较，例如 'zh-CN' -> 'zh'
+    return browserLang.toLowerCase().startsWith('zh') ? 'zh' : 'en';
+  }
+  
+  // 如果无法从 localStorage 或 navigator 获取，则返回一个默认值
+  // 考虑到您的应用似乎以中文为主要展示，可以将 'zh' 作为首选默认值
+  // 如果您希望默认是英文，可以改为 'en'
+  return 'zh'; 
 }
 
 const i18n = createI18n({
