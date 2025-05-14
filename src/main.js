@@ -14,7 +14,7 @@ app.use(i18n)
 // 添加加载指示器
 app.config.globalProperties.$loading = true
 
-// 先加载语言包，再挂载应用
+// 确保语言包加载完成再挂载应用
 loadLanguageAsync().then(() => {
   app.config.globalProperties.$loading = false
   app.mount('#app')

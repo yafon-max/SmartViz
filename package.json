@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "vercel-build": "vite build && node ./scripts/process-i18n.js"
   },
   "dependencies": {
     "@tweenjs/tween.js": "^25.0.0",
